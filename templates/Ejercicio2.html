@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 70px;
+            background-color: #ffffff;
+
+        }
+
+        form {
+            display: inline-block;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 10px;
+
+        }
+
+        input {
+              width: calc(150% - 50px);
+              padding: 8px;
+              margin-bottom: 5px;
+
+        }
+
+        button {
+            width: 50%;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #00bfff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Inicio de Sesión</h1>
+    <form action="/ejercicio2" method="POST">
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="contrasena">Ingresa tu contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+
+        <button type="submit">Verificar</button>
+    </form>
+
+    {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+</body>
+</html>
+

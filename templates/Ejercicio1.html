@@ -1,0 +1,84 @@
+<!-- ejercicio1.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Compra</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        form {
+            display: inline-block;
+            text-align: center;
+            vertical-align: bottom;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input {
+            width: calc(150% - 15px);
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 200%;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: #00bfff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            width: calc(50% - 16px);
+
+        }
+        .resultado {
+        p {
+             text-align: left;
+             line-height: 1.2;
+             padding-left: 300px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Cálculo de Compras</h1>
+    <form action="/ejercicio1" method="POST">
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="edad">Ingresa tu edad:</label>
+        <input type="number" id="edad" name="edad" required>
+
+        <label for="tarros_pintura">Ingresa la cantidad de tarros de pintura a comprar:</label>
+        <input type="number" id="tarros_pintura" name="tarros_pintura" required>
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if mensaje %}
+        <div class="resultado">
+            <p>Nombre del cliente: {{ mensaje.nombre }}</p>
+            <p>Total sin descuento: ${{ mensaje.total_sin_descuento }}</p>
+            {% if mensaje.descuento_aplicado > 0 %}
+            <p>El descuento es: ${{ mensaje.descuento_aplicado | round(2) }}</p>
+            <p>El total a pagar es de: ${{ mensaje.total_con_descuento | round(2) }}</p>
+            {% else %}
+                <p>Sin descuento aplicado</p>
+                <p>El total a pagar es de: ${{ mensaje.total_sin_descuento | round(2) }}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+</body>
+</html>

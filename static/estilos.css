@@ -1,0 +1,31 @@
+body {
+background-color: #D3D3D3;
+}
+h1 {
+    text-align: center;
+    padding: 70px;
+}
+
+.botones {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.boton {
+    display: inline-block;
+    padding: 70px 70px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 0px;
+    margin: 10px;
+}
+
+.ejercicio1 {
+    background-color: #FF69B4; /* Rosado */
+}
+
+.ejercicio2 {
+    background-color: #00FF00; /* Verde */
+}
